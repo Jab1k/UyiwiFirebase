@@ -20,7 +20,7 @@ class HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-        future: fireStore.collection("product").get(),
+        future: fireStore.collection("Games").get(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasData) {
             list.clear();
@@ -40,6 +40,7 @@ class HomepageState extends State<Homepage> {
                         Text(list[index].name),
                         Text(list[index].desc),
                         Text(list[index].price.toString()),
+                        Text(list[index].uynalgan.toString()),
                       ],
                     ),
                   );
